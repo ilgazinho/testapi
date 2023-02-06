@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ilgaz/Documents/GitHub/DenemeDockerApi/WebApplication1/testapi/WebApplication1/WebApplication1.csproj",
+      "projectUniqueName": "/Users/ilgaz/Desktop/test/WebApplication1/WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "/Users/ilgaz/Documents/GitHub/DenemeDockerApi/WebApplication1/testapi/WebApplication1/WebApplication1.csproj",
+      "projectPath": "/Users/ilgaz/Desktop/test/WebApplication1/WebApplication1.csproj",
       "packagesPath": "/Users/ilgaz/.nuget/packages/",
-      "outputPath": "/Users/ilgaz/Documents/GitHub/DenemeDockerApi/WebApplication1/testapi/WebApplication1/obj/",
+      "outputPath": "/Users/ilgaz/Desktop/test/WebApplication1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ilgaz/.nuget/NuGet/NuGet.Config"
