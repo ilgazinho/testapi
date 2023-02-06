@@ -1,5 +1,5 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /app
+WORKDIR /
 
 COPY *.sln ./
 COPY *.csproj ./WebApplication1/
