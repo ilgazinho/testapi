@@ -1,13 +1,14 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /
-COPY *.sln ./
-COPY ./WebApplication1 ./WebApplication1
-RUN dotnet restore ./WebApplication1/WebApplication1.csproj
+WORKDIR /app
 
+COPY *.csproj .
+
+RUN dotnet restore 
+COPY . ./
 
 # copy and publish app and libraries
 COPY . .
-RUN dotnet publish -c release -o api
+RUN dotnet publish -c release -o out
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
