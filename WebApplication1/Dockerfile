@@ -3,7 +3,7 @@ WORKDIR /
 
 COPY *.sln ./
 COPY *.csproj ./WebApplication1/
-COPY ./WebApplication1/. ./WebApplication1/
+COPY WebApplication1/. ./WebApplication1/
 
 RUN dotnet restore ./WebApplication1/WebApplication1.csproj
 
