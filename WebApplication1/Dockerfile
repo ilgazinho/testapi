@@ -7,7 +7,7 @@ RUN dotnet restore
 COPY . ./
 
 # copy and publish app and libraries
-COPY . .
+#COPY . .
 RUN dotnet publish -c release -o out
 
 # final stage/image
