@@ -5,15 +5,15 @@ COPY *.sln ./
 COPY *.csproj ./WebApplication1/
 
 RUN dotnet restore ./WebApplication1/WebApplication1.csproj
-COPY . .
+
 
 # copy and publish app and libraries
-#COPY . .
-RUN dotnet publish -c release -o out
+COPY . .
+RUN dotnet publish -c release -o api
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /app
+WORKDIR /
 COPY --from=build ./WebApplication1/appsettings.json ./WebApplication1/appsettings.json
 WORKDIR /app
 ENV ASPNETCORE_URLS http://*:7002
