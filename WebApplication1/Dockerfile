@@ -4,7 +4,7 @@ WORKDIR /app
 COPY *.sln ./
 COPY *.csproj ./WebApplication1/
 
-RUN dotnet restore 
+RUN dotnet restore ./WebApplication1/WebApplication1.csproj
 COPY . .
 
 # copy and publish app and libraries
