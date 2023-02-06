@@ -2,11 +2,19 @@
 WORKDIR /app
 EXPOSE 1000
 EXPOSE 1001
-RUN dotnet restore
-COPY . ./
-RUN dotnet publish --no-restore -c Realese -o out
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+RUN dotnet restore "WebApplication1/WebApplication1.csproj"
+COPY . .
+WORKDIR "/src/WebApplication1"
+RUN dotnet build "WebApplication1.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "WebApplication1.csproj" -c Release -o /app/publish
+
+FROM base AS final
 WORKDIR /app
-COPY  --from=build-env /app/out .
-ENTRYPOINT ["dotnet","Api.dll"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "WebApplication1.dll"]
