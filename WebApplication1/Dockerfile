@@ -12,7 +12,7 @@ RUN dotnet publish -c release -o out
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /WebApplication1
+WORKDIR /app/WebApplication1
 COPY --from=build ./WebApplication1/appsettings.json ./WebApplication1/appsettings.json
 WORKDIR /app/WebApplication1/
 ENV ASPNETCORE_URLS http://*:7002
