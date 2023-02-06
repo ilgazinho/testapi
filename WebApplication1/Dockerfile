@@ -13,8 +13,7 @@ RUN dotnet publish -c release -o out
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /
-COPY --from=build ./api ./app
-COPY --from=build ./WebApplication1/appsettings.json ./app/appsettings.json
+COPY --from=build ./WebApplication1/appsettings.json ./WebApplication1/appsettings.json
 WORKDIR /app
 ENV ASPNETCORE_URLS http://*:7002
 ENV ASPNETCORE_ENVIRONMENT docker
