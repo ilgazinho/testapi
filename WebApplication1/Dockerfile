@@ -1,20 +1,21 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-WORKDIR /app
-EXPOSE 1000
-EXPOSE 1001
+﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /
+COPY *.sln ./
+COPY WebApplication1/*.csproj ./WebApplication1/
+RUN dotnet restore ./WebApplication1/WebApplication1.csproj
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
-RUN dotnet restore "WebApplication1/WebApplication1.csproj"
+
+# copy and publish app and libraries
 COPY . .
-WORKDIR "/src/WebApplication1"
-RUN dotnet build "WebApplication1.csproj" -c Release -o /app/build
+RUN dotnet publish -c release -o api
 
-FROM build AS publish
-RUN dotnet publish "WebApplication1.csproj" -c Release -o /app/publish
-
-FROM base AS final
+# final stage/image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /
+COPY --from=build ./api ./app
+COPY --from=build ./API/appsettings.json ./app/appsettings.json
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApplication1.dll"]
+ENV ASPNETCORE_URLS http://*:7002
+ENV ASPNETCORE_ENVIRONMENT docker
+EXPOSE 7002
+ENTRYPOINT ["dotnet", "API.dll"]
