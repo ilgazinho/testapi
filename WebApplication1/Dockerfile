@@ -1,7 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-COPY *.csproj .
+COPY *.csproj ./WebApplication1/
 
 RUN dotnet restore 
 COPY . .
