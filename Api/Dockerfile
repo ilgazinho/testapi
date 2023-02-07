@@ -4,9 +4,9 @@ WORKDIR /
 
 COPY *.sln ./
 COPY *.csproj ./
+COPY /Api ./Api/
 
-
-RUN dotnet restore ./Api.csproj
+RUN dotnet restore ./Api/Api.csproj
 
 
 # copy and publish app and libraries
@@ -17,7 +17,7 @@ RUN dotnet publish -c release -o api
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /
 COPY --from=build ./api ./app
-COPY --from=build ./appsettings.json ./app/appsettings.json
+COPY --from=build ./Api/appsettings.json ./app/appsettings.json
 WORKDIR /app
 ENV ASPNETCORE_URLS http://*:1000
 ENV ASPNETCORE_ENVIRONMENT docker
