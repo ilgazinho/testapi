@@ -1,12 +1,26 @@
-﻿FROM mcr.microsoft.com/dotnet/core/sdk:6.0 AS build
-WORKDIR /app
+﻿# https://hub.docker.com/_/microsoft-dotnet
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /
 
-COPY *.csproj .
-RUN dotnet restore
-COPY . ./
-RUN dotnet publish --no-restore -c Release -o out
-FROM mcr.microsoft.com/dotnet/core/aspnet:6.0 AS build
-WORKDIR /app
-COPY --from-build-env /app/out .
-ENTRYPOINT["dotnet","Api.dll"]
+COPY *.sln ./
+COPY Api/*.csproj ./Api/
 
+COPY Api/. ./Api/
+
+RUN dotnet restore ./Api/Api.csproj
+
+
+# copy and publish app and libraries
+COPY . .
+RUN dotnet publish -c release -o api
+
+# final stage/image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /
+COPY --from=build ./api ./app
+COPY --from=build ./Api/appsettings.json ./app/appsettings.json
+WORKDIR /app
+ENV ASPNETCORE_URLS http://*:7002
+ENV ASPNETCORE_ENVIRONMENT docker
+EXPOSE 1000
+ENTRYPOINT ["dotnet", "API.dll"]
