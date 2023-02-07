@@ -8,7 +8,7 @@ COPY *.csproj ./Api/
 
 
 
-RUN dotnet restore 
+RUN dotnet restore --interactive
 
 # copy and publish app and libraries
 COPY . ./Api/
