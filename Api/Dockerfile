@@ -2,7 +2,7 @@
 WORKDIR /app
 COPY . .
 RUN dotnet restore
-RUN dotnet publish -o /app/published-app
+RUN dotnet publish -o /app/Api/published-app
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine as runtime
 WORKDIR /app
