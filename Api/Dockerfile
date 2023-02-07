@@ -3,12 +3,12 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /
 
 COPY *.sln ./
+
+COPY ./Api/*.csproj ./Api/
 COPY . ./Api/
-COPY *.csproj ./Api/
 
 
-
-RUN dotnet restore --interactive
+RUN dotnet restore --interactive 
 
 # copy and publish app and libraries
 COPY . ./Api/
