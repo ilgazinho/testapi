@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /
 
 COPY *.sln ./
-COPY . .
+COPY *.csproj ./Api/
 
 
 RUN dotnet restore ./Api/Api.csproj
