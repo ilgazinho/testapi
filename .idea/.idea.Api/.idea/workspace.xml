@@ -5,7 +5,10 @@
     <projectFile profileName="IIS Express">Api/Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64b9023c-448d-4a28-b883-273053fde720" name="Changes" comment="" />
+    <list default="true" id="64b9023c-448d-4a28-b883-273053fde720" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Api/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675727944762</updated>
-      <workItem from="1675727952635" duration="1568000" />
+      <workItem from="1675727952635" duration="1970000" />
     </task>
     <servers />
   </component>
