@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T4TQXH0lWmOR/wdks7Y0nhFfhiacuTJz0a+Dxo3c62/fzjqf/kD2JNdxJZwcJYKA0n8E3vl0b54utHYbi0tZUg==",
+  "dgSpecHash": "dxFVP6rwi6D56SsRKG4YDAQzkmU1u96WnkJNfMwZzdOMHg9rjZRzgvS3vLLs/ev9kOoEHTF16dfJIxXpRS0ULw==",
   "success": true,
-  "projectFilePath": "/Users/ilgaz/Desktop/test/Api/Api/Api.csproj",
+  "projectFilePath": "/Users/ilgaz/Desktop/test/Api/Api.csproj",
   "expectedPackageFiles": [
     "/Users/ilgaz/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/ilgaz/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",

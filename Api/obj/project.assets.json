@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ilgaz/Desktop/test/Api/Api/Api.csproj",
+      "projectUniqueName": "/Users/ilgaz/Desktop/test/Api/Api.csproj",
       "projectName": "Api",
-      "projectPath": "/Users/ilgaz/Desktop/test/Api/Api/Api.csproj",
+      "projectPath": "/Users/ilgaz/Desktop/test/Api/Api.csproj",
       "packagesPath": "/Users/ilgaz/.nuget/packages/",
-      "outputPath": "/Users/ilgaz/Desktop/test/Api/Api/obj/",
+      "outputPath": "/Users/ilgaz/Desktop/test/Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ilgaz/.nuget/NuGet/NuGet.Config"
