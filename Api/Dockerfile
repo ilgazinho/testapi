@@ -12,7 +12,7 @@ COPY . ./
 RUN dotnet publish -c release -o api
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/core/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env app/api .
 ENV ASPNETCORE_URLS http://*:1000
