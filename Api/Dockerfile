@@ -11,7 +11,7 @@ COPY *.csproj ./Api/
 RUN dotnet restore ./Api/Api.csproj
 
 # copy and publish app and libraries
-COPY . .
+COPY . ./Api/
 RUN dotnet publish -c release -o api
 
 # final stage/image
