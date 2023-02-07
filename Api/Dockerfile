@@ -19,7 +19,7 @@ WORKDIR /
 COPY --from=build ./api ./app
 COPY --from=build ./appsettings.json ./app/appsettings.json
 WORKDIR /app
-ENV ASPNETCORE_URLS http://*:7002
+ENV ASPNETCORE_URLS http://*:1000
 ENV ASPNETCORE_ENVIRONMENT docker
 EXPOSE 1000
 ENTRYPOINT ["dotnet", "API.dll"]
