@@ -4,7 +4,7 @@ WORKDIR /
 
 COPY *.sln ./
 COPY *.csproj ./Api/
-COPY . .
+
 RUN dotnet restore ./Api/Api.csproj
 
 
