@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /
 
 COPY *.sln ./
-COPY Api/*.csproj ./Api/
+COPY . .
 
 
 RUN dotnet restore ./Api/Api.csproj
@@ -17,7 +17,7 @@ RUN dotnet publish -c release -o api
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /
 COPY --from=build ./api ./app
-COPY --from=build ./appsettings.json ./app/appsettings.json
+COPY --from=build ./Api/appsettings.json ./app/appsettings.json
 WORKDIR /app
 ENV ASPNETCORE_URLS http://*:7002
 ENV ASPNETCORE_ENVIRONMENT docker
