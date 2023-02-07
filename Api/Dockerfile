@@ -6,7 +6,7 @@ COPY *.sln ./
 COPY *.csproj ./
 
 
-RUN dotnet restore ./Api/Api.csproj
+RUN dotnet restore ./Api.csproj
 
 
 # copy and publish app and libraries
