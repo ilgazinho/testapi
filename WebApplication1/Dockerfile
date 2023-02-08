@@ -8,6 +8,7 @@ ENV ASPNETCORE_URLS=http://+:80
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["WebApplication1.csproj", "WebApplication1/"]
+RUN dotnet restore --interactive
 RUN dotnet restore "WebApplication1/WebApplication1.csproj"
 COPY . .
 
