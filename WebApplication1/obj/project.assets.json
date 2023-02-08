@@ -288,11 +288,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ILGAZPC\\Desktop\\SampleAPIDocker\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Developer\\Github\\API\\testapi\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\ILGAZPC\\Desktop\\SampleAPIDocker\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "D:\\Developer\\Github\\API\\testapi\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\ILGAZPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ILGAZPC\\Desktop\\SampleAPIDocker\\WebApplication1\\obj\\",
+      "outputPath": "D:\\Developer\\Github\\API\\testapi\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
