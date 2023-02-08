@@ -5,6 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+COPY . .
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["WebApplication1.csproj", "."]
